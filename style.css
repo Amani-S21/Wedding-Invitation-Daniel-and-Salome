@@ -493,7 +493,8 @@ fieldset {
     align-items: center;
     justify-items: stretch;
     min-height: calc(100vh - 60px);
-    gap: 34px;
+    column-gap: clamp(54px, 7vw, 96px);
+    row-gap: 34px;
     padding: 54px 54px 44px;
     text-align: left;
   }
@@ -503,15 +504,15 @@ fieldset {
   }
 
   .hero-copy {
-    width: min(48vw, 560px);
-    min-height: min(48vw, 560px);
+    width: min(43vw, 500px);
+    min-height: min(43vw, 500px);
     justify-self: center;
-    padding: 62px 56px;
+    padding: 48px 44px;
   }
 
   .couple-names {
-    max-width: 78%;
-    font-size: clamp(3.1rem, 5.1vw, 4.75rem);
+    max-width: 82%;
+    font-size: clamp(3rem, 4.75vw, 4.45rem);
   }
 
   .hero-date {
@@ -524,7 +525,7 @@ fieldset {
   }
 
   .main-photo {
-    width: min(100%, 420px);
+    width: min(100%, 470px);
     min-height: auto;
     aspect-ratio: 3580 / 5428;
     justify-self: center;
@@ -566,7 +567,7 @@ fieldset {
 
 @media (min-width: 1080px) {
   .main-photo {
-    width: min(100%, 440px);
+    width: min(100%, 500px);
   }
 }
 
