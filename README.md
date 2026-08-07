@@ -8,6 +8,7 @@ Static wedding invitation website ready for Vercel deployment.
 - `style.css` - responsive luxury wedding styling
 - `script.js` - reveal animations, gallery rotation, and WhatsApp RSVP
 - `assets/images/main/main-invitation.jpg` - primary invitation image
+- `assets/images/main/main-invitation-original.jpg` - original uploaded photo backup
 - `assets/images/gallery/` - add future gallery photos here
 - `assets/fonts/` - optional local font files
 - `vercel.json` - simple Vercel static configuration
