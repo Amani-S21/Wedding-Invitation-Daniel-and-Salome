@@ -61,8 +61,13 @@ function showGalleryImage(index) {
 
 function startGalleryRotation() {
   window.clearInterval(galleryTimer);
+  const hasMultipleImages = galleryImages.length > 1;
 
-  if (galleryImages.length > 1) {
+  previousButton.hidden = !hasMultipleImages;
+  nextButton.hidden = !hasMultipleImages;
+  galleryDots.hidden = !hasMultipleImages;
+
+  if (hasMultipleImages) {
     galleryTimer = window.setInterval(() => {
       showGalleryImage(galleryIndex + 1);
     }, 4500);
