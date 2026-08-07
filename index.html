@@ -140,14 +140,28 @@
       <section class="section gallery-section reveal" aria-labelledby="gallery-title">
         <p class="section-kicker">Our moments</p>
         <h2 id="gallery-title">Gallery</h2>
-        <div class="gallery-frame">
-          <img id="galleryImage" src="" alt="" />
-          <button class="gallery-button previous" type="button" aria-label="Previous photo">
-            <i class="bi bi-chevron-left" aria-hidden="true"></i>
-          </button>
-          <button class="gallery-button next" type="button" aria-label="Next photo">
-            <i class="bi bi-chevron-right" aria-hidden="true"></i>
-          </button>
+        <div class="gallery-layout">
+          <div class="gallery-frame">
+            <img class="gallery-backdrop" id="galleryBackdrop" src="" alt="" aria-hidden="true" />
+            <img class="gallery-photo" id="galleryImage" src="" alt="" />
+
+            <div class="gallery-status">
+              <span id="galleryCounter">Photo 01 / 10</span>
+            </div>
+
+            <button class="gallery-button previous" type="button" aria-label="Previous photo">
+              <i class="bi bi-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="gallery-button next" type="button" aria-label="Next photo">
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
+
+            <div class="gallery-progress" aria-hidden="true">
+              <span id="galleryProgress"></span>
+            </div>
+          </div>
+
+          <div class="gallery-thumbnails" id="galleryThumbnails" aria-label="Gallery thumbnails"></div>
         </div>
         <div class="gallery-dots" id="galleryDots" aria-label="Gallery navigation"></div>
       </section>

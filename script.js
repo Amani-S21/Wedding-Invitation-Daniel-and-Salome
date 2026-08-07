@@ -42,8 +42,12 @@ const galleryImages = [
 ];
 
 const revealElements = document.querySelectorAll(".reveal");
+const galleryBackdrop = document.getElementById("galleryBackdrop");
 const galleryImage = document.getElementById("galleryImage");
+const galleryCounter = document.getElementById("galleryCounter");
 const galleryDots = document.getElementById("galleryDots");
+const galleryProgress = document.getElementById("galleryProgress");
+const galleryThumbnails = document.getElementById("galleryThumbnails");
 const previousButton = document.querySelector(".gallery-button.previous");
 const nextButton = document.querySelector(".gallery-button.next");
 let galleryIndex = 0;
@@ -68,6 +72,7 @@ revealElements.forEach((element, index) => {
 
 function renderDots() {
   galleryDots.innerHTML = "";
+  galleryThumbnails.innerHTML = "";
 
   galleryImages.forEach((image, index) => {
     const dot = document.createElement("button");
@@ -76,20 +81,51 @@ function renderDots() {
     dot.classList.toggle("is-active", index === galleryIndex);
     dot.addEventListener("click", () => showGalleryImage(index));
     galleryDots.appendChild(dot);
+
+    const thumbnail = document.createElement("button");
+    const thumbnailImage = document.createElement("img");
+
+    thumbnail.type = "button";
+    thumbnail.className = "gallery-thumbnail";
+    thumbnail.classList.toggle("is-active", index === galleryIndex);
+    thumbnail.setAttribute("aria-label", `Show gallery photo ${index + 1}`);
+    thumbnailImage.src = image.src;
+    thumbnailImage.alt = "";
+    thumbnailImage.loading = "lazy";
+    thumbnail.appendChild(thumbnailImage);
+    thumbnail.addEventListener("click", () => {
+      showGalleryImage(index);
+      startGalleryRotation();
+    });
+    galleryThumbnails.appendChild(thumbnail);
   });
+}
+
+function restartProgress() {
+  galleryProgress.style.animation = "none";
+  galleryProgress.offsetHeight;
+  galleryProgress.style.animation = "";
 }
 
 function showGalleryImage(index) {
   galleryIndex = (index + galleryImages.length) % galleryImages.length;
   const image = galleryImages[galleryIndex];
 
+  galleryBackdrop.classList.add("is-changing");
   galleryImage.classList.add("is-changing");
 
   window.setTimeout(() => {
+    galleryBackdrop.src = image.src;
     galleryImage.src = image.src;
     galleryImage.alt = image.alt;
+    galleryCounter.textContent = `Photo ${String(galleryIndex + 1).padStart(
+      2,
+      "0"
+    )} / ${String(galleryImages.length).padStart(2, "0")}`;
+    galleryBackdrop.classList.remove("is-changing");
     galleryImage.classList.remove("is-changing");
     renderDots();
+    restartProgress();
   }, 180);
 }
 
@@ -100,6 +136,8 @@ function startGalleryRotation() {
   previousButton.hidden = !hasMultipleImages;
   nextButton.hidden = !hasMultipleImages;
   galleryDots.hidden = !hasMultipleImages;
+  galleryProgress.hidden = !hasMultipleImages;
+  galleryThumbnails.hidden = !hasMultipleImages;
 
   if (hasMultipleImages) {
     galleryTimer = window.setInterval(() => {
