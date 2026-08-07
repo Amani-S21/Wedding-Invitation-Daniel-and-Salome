@@ -1,10 +1,44 @@
 const galleryImages = [
   {
+    src: "assets/images/gallery/DSC_6885%202.jpg",
+    alt: "Daniel and Salome gallery photo 1"
+  },
+  {
+    src: "assets/images/gallery/DSC_6885.jpg",
+    alt: "Daniel and Salome gallery photo 2"
+  },
+  {
+    src: "assets/images/gallery/DSC_6909_1.jpg",
+    alt: "Daniel and Salome gallery photo 3"
+  },
+  {
+    src: "assets/images/gallery/DSC_6914.jpg",
+    alt: "Daniel and Salome gallery photo 4"
+  },
+  {
+    src: "assets/images/gallery/DSC_69142.jpg",
+    alt: "Daniel and Salome gallery photo 5"
+  },
+  {
+    src: "assets/images/gallery/DSC_6941.jpg",
+    alt: "Daniel and Salome gallery photo 6"
+  },
+  {
+    src: "assets/images/gallery/DSC_6953.jpg",
+    alt: "Daniel and Salome gallery photo 7"
+  },
+  {
+    src: "assets/images/gallery/DSC_6954.jpg",
+    alt: "Daniel and Salome gallery photo 8"
+  },
+  {
+    src: "assets/images/gallery/DSC_6958.jpg",
+    alt: "Daniel and Salome gallery photo 9"
+  },
+  {
     src: "assets/images/main/main-invitation.jpg",
     alt: "Daniel Ngandwe and Salome Prisca Sila"
   }
-  // Add future gallery photos here:
-  // { src: "assets/images/gallery/photo-01.jpg", alt: "Daniel and Salome" }
 ];
 
 const revealElements = document.querySelectorAll(".reveal");
@@ -70,7 +104,7 @@ function startGalleryRotation() {
   if (hasMultipleImages) {
     galleryTimer = window.setInterval(() => {
       showGalleryImage(galleryIndex + 1);
-    }, 4500);
+    }, 3000);
   }
 }
 
