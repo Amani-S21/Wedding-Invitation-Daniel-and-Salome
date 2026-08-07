@@ -1,43 +1,39 @@
 const galleryImages = [
   {
-    src: "assets/images/gallery/DSC_6885%202.jpg",
+    src: "assets/images/gallery/optimized/dsc_6885-2.jpg",
     alt: "Daniel and Salome gallery photo 1"
   },
   {
-    src: "assets/images/gallery/DSC_6885.jpg",
+    src: "assets/images/gallery/optimized/dsc_6885.jpg",
     alt: "Daniel and Salome gallery photo 2"
   },
   {
-    src: "assets/images/gallery/DSC_6909_1.jpg",
+    src: "assets/images/gallery/optimized/dsc_6909_1.jpg",
     alt: "Daniel and Salome gallery photo 3"
   },
   {
-    src: "assets/images/gallery/DSC_6914.jpg",
+    src: "assets/images/gallery/optimized/dsc_6914.jpg",
     alt: "Daniel and Salome gallery photo 4"
   },
   {
-    src: "assets/images/gallery/DSC_69142.jpg",
+    src: "assets/images/gallery/optimized/dsc_69142.jpg",
     alt: "Daniel and Salome gallery photo 5"
   },
   {
-    src: "assets/images/gallery/DSC_6941.jpg",
+    src: "assets/images/gallery/optimized/dsc_6941.jpg",
     alt: "Daniel and Salome gallery photo 6"
   },
   {
-    src: "assets/images/gallery/DSC_6953.jpg",
+    src: "assets/images/gallery/optimized/dsc_6953.jpg",
     alt: "Daniel and Salome gallery photo 7"
   },
   {
-    src: "assets/images/gallery/DSC_6954.jpg",
+    src: "assets/images/gallery/optimized/dsc_6954.jpg",
     alt: "Daniel and Salome gallery photo 8"
   },
   {
-    src: "assets/images/gallery/DSC_6958.jpg",
+    src: "assets/images/gallery/optimized/dsc_6958.jpg",
     alt: "Daniel and Salome gallery photo 9"
-  },
-  {
-    src: "assets/images/main/main-invitation.jpg",
-    alt: "Daniel Ngandwe and Salome Prisca Sila"
   }
 ];
 
@@ -107,6 +103,12 @@ function restartProgress() {
   galleryProgress.style.animation = "";
 }
 
+function preloadNextImage() {
+  const nextImage = galleryImages[(galleryIndex + 1) % galleryImages.length];
+  const preload = new Image();
+  preload.src = nextImage.src;
+}
+
 function showGalleryImage(index) {
   galleryIndex = (index + galleryImages.length) % galleryImages.length;
   const image = galleryImages[galleryIndex];
@@ -118,7 +120,7 @@ function showGalleryImage(index) {
     galleryBackdrop.src = image.src;
     galleryImage.src = image.src;
     galleryImage.alt = image.alt;
-    galleryCounter.textContent = `Photo ${String(galleryIndex + 1).padStart(
+    galleryCounter.textContent = `Portrait ${String(galleryIndex + 1).padStart(
       2,
       "0"
     )} / ${String(galleryImages.length).padStart(2, "0")}`;
@@ -126,6 +128,7 @@ function showGalleryImage(index) {
     galleryImage.classList.remove("is-changing");
     renderDots();
     restartProgress();
+    preloadNextImage();
   }, 180);
 }
 

@@ -10,6 +10,7 @@ Static wedding invitation website ready for Vercel deployment.
 - `assets/images/main/main-invitation.jpg` - primary invitation image
 - `assets/images/main/main-invitation-original.jpg` - original uploaded photo backup
 - `assets/images/gallery/` - add future gallery photos here
+- `assets/images/gallery/optimized/` - web-ready gallery images used by the carousel
 - `assets/fonts/` - optional local font files
 - `vercel.json` - simple Vercel static configuration
 
