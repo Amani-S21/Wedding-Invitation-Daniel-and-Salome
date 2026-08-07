@@ -3,12 +3,204 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0; url=wedding-invitation/" />
     <title>Daniel & Salome Wedding Invitation</title>
+    <meta
+      name="description"
+      content="Kindly join Daniel Ngandwe and Salome Prisca Sila for their wedding celebration on October 25, 2026."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <p>
-      <a href="wedding-invitation/">Open the wedding invitation</a>
-    </p>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Kindly Join Us For The Wedding Of</p>
+          <h1 id="hero-title" class="couple-names reveal">
+            <span>Daniel Ngandwe</span>
+            <span class="ampersand">&amp;</span>
+            <span>Salome Prisca Sila</span>
+          </h1>
+          <div class="hero-date reveal">
+            <i class="bi bi-calendar-heart" aria-hidden="true"></i>
+            <span>October 25, 2026</span>
+          </div>
+          <p class="follow reveal">Reception to follow</p>
+        </div>
+
+        <figure class="main-photo reveal">
+          <img
+            src="assets/images/main/main-invitation.jpg"
+            alt="Daniel Ngandwe and Salome Prisca Sila"
+          />
+        </figure>
+      </section>
+
+      <section class="section intro-section reveal" aria-labelledby="details-title">
+        <p class="section-kicker">With joy and gratitude</p>
+        <h2 id="details-title">Wedding Details</h2>
+        <p>
+          Together with their families, Daniel and Salome warmly invite you to
+          celebrate their love, their union, and the beginning of a beautiful
+          new chapter surrounded by the people who mean the most.
+        </p>
+      </section>
+
+      <section class="section reveal" aria-labelledby="when-title">
+        <p class="section-kicker">Save the date</p>
+        <h2 id="when-title">When</h2>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <i class="bi bi-calendar2-heart" aria-hidden="true"></i>
+            <span>Wedding Date</span>
+            <strong>October 25, 2026</strong>
+          </article>
+          <article class="detail-card">
+            <i class="bi bi-stars" aria-hidden="true"></i>
+            <span>Celebration</span>
+            <strong>Reception to follow</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="where-title">
+        <p class="section-kicker">Celebrate with us</p>
+        <h2 id="where-title">Where</h2>
+        <article class="location-card">
+          <i class="bi bi-geo-alt" aria-hidden="true"></i>
+          <div>
+            <span>Reception</span>
+            <address>
+              1810 Army Post Rd,<br />
+              Des Moines, IA 50315,<br />
+              United States
+            </address>
+          </div>
+        </article>
+        <a
+          class="primary-button"
+          href="https://www.google.com/maps/place/1810+Army+Post+Rd,+Des+Moines,+IA+50315,+%C3%89tats-Unis/@41.5259514,-93.6435913,17z/data=!3m1!4b1!4m6!3m5!1s0x87eea26c432944ed:0xa5c147c8e0cf854e!8m2!3d41.5259474!4d41.5259474?entry=ttu"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="bi bi-map" aria-hidden="true"></i>
+          Open in Google Maps
+        </a>
+      </section>
+
+      <section class="map-section reveal" aria-label="Google Maps preview">
+        <iframe
+          title="Map to 1810 Army Post Rd, Des Moines, IA 50315"
+          src="https://www.google.com/maps?q=1810%20Army%20Post%20Rd%2C%20Des%20Moines%2C%20IA%2050315&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </section>
+
+      <section class="section reveal" aria-labelledby="schedule-title">
+        <p class="section-kicker">The celebration</p>
+        <h2 id="schedule-title">Wedding Schedule</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <i class="bi bi-door-open" aria-hidden="true"></i>
+            <span>Guest Arrival</span>
+          </div>
+          <div class="timeline-item">
+            <i class="bi bi-heart" aria-hidden="true"></i>
+            <span>Ceremony</span>
+          </div>
+          <div class="timeline-item">
+            <i class="bi bi-cup-straw" aria-hidden="true"></i>
+            <span>Cocktail Hour</span>
+          </div>
+          <div class="timeline-item">
+            <i class="bi bi-cup-hot" aria-hidden="true"></i>
+            <span>Dinner Reception</span>
+          </div>
+          <div class="timeline-item">
+            <i class="bi bi-music-note-beamed" aria-hidden="true"></i>
+            <span>Dancing &amp; Celebration</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gallery-section reveal" aria-labelledby="gallery-title">
+        <p class="section-kicker">Our moments</p>
+        <h2 id="gallery-title">Gallery</h2>
+        <div class="gallery-frame">
+          <img id="galleryImage" src="" alt="" />
+          <button class="gallery-button previous" type="button" aria-label="Previous photo">
+            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="gallery-button next" type="button" aria-label="Next photo">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="gallery-dots" id="galleryDots" aria-label="Gallery navigation"></div>
+      </section>
+
+      <section class="section rsvp-section reveal" aria-labelledby="rsvp-title">
+        <p class="section-kicker">RSVP</p>
+        <h2 id="rsvp-title">Confirm Attendance</h2>
+        <form class="rsvp-form" id="rsvpForm">
+          <label for="fullName">Full Name</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Your full name"
+            required
+          />
+
+          <label for="guestCount">Number of Guests</label>
+          <input
+            type="number"
+            id="guestCount"
+            name="guestCount"
+            min="1"
+            value="1"
+            required
+          />
+
+          <fieldset>
+            <legend>Attendance</legend>
+            <label class="radio-option">
+              <input
+                type="radio"
+                name="attendance"
+                value="Yes, I will attend"
+                required
+              />
+              <span>Yes, I will attend</span>
+            </label>
+            <label class="radio-option">
+              <input
+                type="radio"
+                name="attendance"
+                value="Sorry, I cannot attend"
+              />
+              <span>Sorry, I cannot attend</span>
+            </label>
+          </fieldset>
+
+          <button class="primary-button form-button" type="submit">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i>
+            Confirm Attendance
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
