@@ -414,6 +414,50 @@ address {
   gap: 13px;
 }
 
+.wedding-footer {
+  margin-top: 18px;
+  padding: 44px 22px;
+  text-align: center;
+  border-top: 1px solid rgba(184, 148, 77, 0.28);
+}
+
+.footer-kicker {
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.footer-signature {
+  margin: 10px 0 18px;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 9vw, 4.2rem);
+  font-style: italic;
+  line-height: 1;
+}
+
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 18px;
+  color: var(--deep-sage);
+  font-size: 0.88rem;
+}
+
+.footer-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-meta i {
+  color: var(--gold);
+}
+
 label,
 legend {
   color: var(--deep-sage);
@@ -493,14 +537,14 @@ fieldset {
     align-items: center;
     justify-items: stretch;
     min-height: calc(100vh - 60px);
-    column-gap: clamp(54px, 7vw, 96px);
+    column-gap: clamp(28px, 4vw, 52px);
     row-gap: 34px;
     padding: 54px 54px 44px;
     text-align: left;
   }
 
   .hero-content {
-    justify-items: start;
+    justify-items: center;
   }
 
   .hero-copy {
@@ -517,15 +561,16 @@ fieldset {
 
   .hero-date {
     justify-content: center;
-    margin-left: 44px;
+    margin-left: 0;
   }
 
   .follow {
-    margin-left: 44px;
+    margin-left: 0;
+    text-align: center;
   }
 
   .main-photo {
-    width: min(100%, 470px);
+    width: min(100%, 520px);
     min-height: auto;
     aspect-ratio: 3580 / 5428;
     justify-self: center;
@@ -535,6 +580,11 @@ fieldset {
   .section {
     margin-top: 26px;
     padding: 56px;
+  }
+
+  .wedding-footer {
+    margin-top: 26px;
+    padding: 56px 22px 34px;
   }
 
   .detail-grid {
@@ -567,7 +617,7 @@ fieldset {
 
 @media (min-width: 1080px) {
   .main-photo {
-    width: min(100%, 500px);
+    width: min(100%, 550px);
   }
 }
 
