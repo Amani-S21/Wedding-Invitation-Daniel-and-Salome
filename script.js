@@ -28,6 +28,7 @@ const galleryImages = [
 const invitationIntro = document.getElementById("invitationIntro");
 const openInvitationButton = document.getElementById("openInvitation");
 const revealElements = document.querySelectorAll(".reveal");
+const textSections = document.querySelectorAll(".text-section");
 const galleryBackdrop = document.getElementById("galleryBackdrop");
 const galleryImage = document.getElementById("galleryImage");
 const galleryCounter = document.getElementById("galleryCounter");
@@ -38,6 +39,24 @@ const previousButton = document.querySelector(".gallery-button.previous");
 const nextButton = document.querySelector(".gallery-button.next");
 let galleryIndex = 0;
 let galleryTimer;
+
+textSections.forEach((section, index) => {
+  const opener = document.createElement("div");
+  opener.className = "section-opener";
+  opener.setAttribute("aria-hidden", "true");
+  opener.innerHTML = `
+    <span class="opener-line"></span>
+    <span class="opener-icons">
+      <i class="bi bi-flower1"></i>
+      <i class="bi bi-heart-fill"></i>
+      <i class="bi bi-stars"></i>
+    </span>
+    <span class="opener-line"></span>
+  `;
+
+  section.classList.add(index % 2 === 0 ? "from-left" : "from-right");
+  section.prepend(opener);
+});
 
 function openInvitation() {
   invitationIntro.classList.add("is-opening");
