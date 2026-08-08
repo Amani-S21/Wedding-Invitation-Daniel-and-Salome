@@ -45,13 +45,9 @@ textSections.forEach((section, index) => {
   opener.className = "section-opener";
   opener.setAttribute("aria-hidden", "true");
   opener.innerHTML = `
-    <span class="opener-line"></span>
-    <span class="opener-icons">
-      <i class="bi bi-flower1"></i>
+    <span class="opener-heart">
       <i class="bi bi-heart-fill"></i>
-      <i class="bi bi-stars"></i>
     </span>
-    <span class="opener-line"></span>
   `;
 
   section.classList.add(index % 2 === 0 ? "from-left" : "from-right");
