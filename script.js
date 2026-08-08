@@ -27,6 +27,7 @@ const galleryImages = [
 
 const invitationIntro = document.getElementById("invitationIntro");
 const openInvitationButton = document.getElementById("openInvitation");
+const welcomeText = document.getElementById("welcomeText");
 const revealElements = document.querySelectorAll(".reveal");
 const textSections = document.querySelectorAll(".text-section");
 const galleryBackdrop = document.getElementById("galleryBackdrop");
@@ -39,25 +40,50 @@ const previousButton = document.querySelector(".gallery-button.previous");
 const nextButton = document.querySelector(".gallery-button.next");
 let galleryIndex = 0;
 let galleryTimer;
+let invitationOpened = false;
 
 textSections.forEach((section, index) => {
   section.classList.add(index % 2 === 0 ? "from-left" : "from-right");
 });
 
 function openInvitation() {
-  invitationIntro.classList.add("is-opening");
+  if (invitationOpened) {
+    return;
+  }
 
-  window.setTimeout(() => {
-    document.body.classList.remove("intro-active");
-    invitationIntro.setAttribute("aria-hidden", "true");
-  }, 620);
+  invitationOpened = true;
+  openInvitationButton.disabled = true;
+  invitationIntro.classList.add("is-typing");
+  typeWelcomeMessage("WELCOME TO OUR WEDDING", () => {
+    invitationIntro.classList.add("is-opening");
 
-  window.setTimeout(() => {
-    invitationIntro.remove();
-  }, 1200);
+    window.setTimeout(() => {
+      document.body.classList.remove("intro-active");
+      invitationIntro.setAttribute("aria-hidden", "true");
+    }, 520);
+
+    window.setTimeout(() => {
+      invitationIntro.remove();
+    }, 1180);
+  });
 }
 
 openInvitationButton.addEventListener("click", openInvitation);
+
+function typeWelcomeMessage(message, onComplete) {
+  let index = 0;
+  welcomeText.textContent = "";
+
+  const typing = window.setInterval(() => {
+    welcomeText.textContent += message[index];
+    index += 1;
+
+    if (index >= message.length) {
+      window.clearInterval(typing);
+      window.setTimeout(onComplete, 720);
+    }
+  }, 72);
+}
 
 const observer = new IntersectionObserver(
   (entries) => {

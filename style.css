@@ -85,6 +85,12 @@ body::before {
   visibility: hidden;
 }
 
+.invitation-intro.is-typing .intro-card {
+  opacity: 0;
+  transform: translateY(-18px) scale(0.94);
+  pointer-events: none;
+}
+
 .intro-card {
   position: relative;
   width: min(90vw, 430px);
@@ -182,6 +188,71 @@ body::before {
 .invitation-intro.is-opening .intro-seal {
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.6);
+}
+
+.welcome-loader {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  width: min(90vw, 620px);
+  padding: 34px 24px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.invitation-intro.is-typing .welcome-loader {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.welcome-loader::before,
+.welcome-loader::after {
+  content: "";
+  width: min(68vw, 320px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(228, 201, 132, 0.82), transparent);
+}
+
+.welcome-kicker {
+  color: var(--soft-gold);
+  font-size: clamp(0.8rem, 2.8vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+#welcomeText {
+  min-height: 2.1em;
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.55rem, 11vw, 5.6rem);
+  font-weight: 700;
+  line-height: 0.9;
+  text-shadow:
+    0 18px 38px rgba(0, 0, 0, 0.45),
+    0 0 32px rgba(228, 201, 132, 0.18);
+}
+
+#welcomeText::after {
+  content: "";
+  display: inline-block;
+  width: 0.08em;
+  height: 0.78em;
+  margin-left: 0.08em;
+  background: var(--soft-gold);
+  vertical-align: -0.08em;
+  animation: cursorBlink 700ms steps(2, start) infinite;
+}
+
+@keyframes cursorBlink {
+  50% {
+    opacity: 0;
+  }
 }
 
 .page-shell {
