@@ -80,7 +80,7 @@ function typeWelcomeMessage(message, onComplete) {
 
     if (index >= message.length) {
       window.clearInterval(typing);
-      window.setTimeout(onComplete, 720);
+      onComplete();
     }
   }, 72);
 }
