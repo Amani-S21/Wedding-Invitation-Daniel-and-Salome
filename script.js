@@ -25,6 +25,8 @@ const galleryImages = [
   }
 ];
 
+const invitationIntro = document.getElementById("invitationIntro");
+const openInvitationButton = document.getElementById("openInvitation");
 const revealElements = document.querySelectorAll(".reveal");
 const galleryBackdrop = document.getElementById("galleryBackdrop");
 const galleryImage = document.getElementById("galleryImage");
@@ -36,6 +38,21 @@ const previousButton = document.querySelector(".gallery-button.previous");
 const nextButton = document.querySelector(".gallery-button.next");
 let galleryIndex = 0;
 let galleryTimer;
+
+function openInvitation() {
+  invitationIntro.classList.add("is-opening");
+
+  window.setTimeout(() => {
+    document.body.classList.remove("intro-active");
+    invitationIntro.setAttribute("aria-hidden", "true");
+  }, 620);
+
+  window.setTimeout(() => {
+    invitationIntro.remove();
+  }, 1200);
+}
+
+openInvitationButton.addEventListener("click", openInvitation);
 
 const observer = new IntersectionObserver(
   (entries) => {

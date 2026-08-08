@@ -20,9 +20,24 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="intro-active">
+    <div class="invitation-intro" id="invitationIntro" aria-label="Open wedding invitation">
+      <button class="intro-card" id="openInvitation" type="button">
+        <span class="intro-flap" aria-hidden="true"></span>
+        <span class="intro-seal" aria-hidden="true">
+          <i class="bi bi-heart-fill"></i>
+        </span>
+        <span class="intro-content">
+          <span>Daniel &amp; Salome</span>
+          <strong>Open Invitation</strong>
+          <small>October 25, 2026</small>
+        </span>
+      </button>
+    </div>
+
     <main class="page-shell">
       <section class="hero" aria-labelledby="hero-title">
+        <div class="motion-glow" aria-hidden="true"></div>
         <div class="hero-decoration hero-decoration-left" aria-hidden="true">
           <i class="bi bi-flower1"></i>
           <i class="bi bi-heart-fill"></i>
@@ -46,6 +61,9 @@
             <span>October 25, 2026</span>
           </div>
           <p class="follow reveal">Reception to follow</p>
+          <div class="scroll-cue reveal" aria-hidden="true">
+            <i class="bi bi-chevron-double-down"></i>
+          </div>
         </div>
 
         <figure class="main-photo reveal">
@@ -53,10 +71,14 @@
             src="assets/images/main/HERO%20IMAGE.jpeg"
             alt="Daniel Ngandwe and Salome Prisca Sila"
           />
+          <div class="photo-sparkles" aria-hidden="true">
+            <i class="bi bi-stars"></i>
+            <i class="bi bi-heart"></i>
+          </div>
         </figure>
       </section>
 
-      <section class="section intro-section reveal" aria-labelledby="details-title">
+      <section class="section text-section intro-section reveal" aria-labelledby="details-title">
         <p class="section-kicker">With joy and gratitude</p>
         <h2 id="details-title">Wedding Details</h2>
         <p>
@@ -66,7 +88,7 @@
         </p>
       </section>
 
-      <section class="section reveal" aria-labelledby="when-title">
+      <section class="section text-section reveal" aria-labelledby="when-title">
         <p class="section-kicker">Save the date</p>
         <h2 id="when-title">When</h2>
         <div class="detail-grid">
@@ -83,7 +105,7 @@
         </div>
       </section>
 
-      <section class="section reveal" aria-labelledby="where-title">
+      <section class="section text-section reveal" aria-labelledby="where-title">
         <p class="section-kicker">Celebrate with us</p>
         <h2 id="where-title">Where</h2>
         <article class="location-card">
@@ -118,7 +140,7 @@
         ></iframe>
       </section>
 
-      <section class="section reveal" aria-labelledby="schedule-title">
+      <section class="section text-section reveal" aria-labelledby="schedule-title">
         <p class="section-kicker">The celebration</p>
         <h2 id="schedule-title">Wedding Schedule</h2>
         <div class="timeline">
@@ -174,7 +196,7 @@
         <div class="gallery-dots" id="galleryDots" aria-label="Gallery navigation"></div>
       </section>
 
-      <section class="section rsvp-section reveal" aria-labelledby="rsvp-title">
+      <section class="section text-section rsvp-section reveal" aria-labelledby="rsvp-title">
         <p class="section-kicker">RSVP</p>
         <h2 id="rsvp-title">Confirm Attendance</h2>
         <form class="rsvp-form" id="rsvpForm">
