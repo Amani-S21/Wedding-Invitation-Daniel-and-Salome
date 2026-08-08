@@ -55,16 +55,8 @@ function openInvitation() {
   openInvitationButton.disabled = true;
   invitationIntro.classList.add("is-typing");
   typeWelcomeMessage("WELCOME TO OUR WEDDING", () => {
-    invitationIntro.classList.add("is-opening");
-
-    window.setTimeout(() => {
-      document.body.classList.remove("intro-active");
-      invitationIntro.setAttribute("aria-hidden", "true");
-    }, 520);
-
-    window.setTimeout(() => {
-      invitationIntro.remove();
-    }, 1180);
+    document.body.classList.remove("intro-active");
+    invitationIntro.remove();
   });
 }
 

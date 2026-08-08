@@ -258,7 +258,7 @@ body::before {
 .page-shell {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 700ms ease 260ms, transform 700ms ease 260ms;
+  transition: opacity 220ms ease, transform 220ms ease;
 }
 
 body.intro-active .page-shell {
