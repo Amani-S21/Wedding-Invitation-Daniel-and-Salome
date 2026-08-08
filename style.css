@@ -287,11 +287,14 @@ body.intro-active .page-shell {
 .hero {
   min-height: calc(100vh - 32px);
   display: grid;
-  align-content: start;
+  align-content: center;
   justify-items: center;
-  gap: 24px;
-  padding: 22px 14px 14px;
+  gap: 0;
+  padding: 22px 14px;
   text-align: center;
+  background:
+    radial-gradient(circle at center, rgba(228, 201, 132, 0.16), transparent 30rem),
+    linear-gradient(145deg, rgba(255, 250, 243, 0.96), rgba(236, 222, 200, 0.88));
 }
 
 .motion-glow {
@@ -444,14 +447,15 @@ body.intro-active .page-shell {
   margin: 0;
   overflow: hidden;
   border: 1px solid rgba(184, 148, 77, 0.34);
-  border-radius: 24px;
-  background: #ded2bf;
-  aspect-ratio: 820 / 1024;
-  width: 100%;
+  border-radius: 30px;
+  background: var(--charcoal);
+  aspect-ratio: 1122 / 1402;
+  width: min(100%, 520px);
   padding: 0;
   box-shadow:
-    0 26px 54px rgba(48, 42, 36, 0.18),
-    0 0 0 8px rgba(255, 250, 243, 0.42);
+    0 30px 70px rgba(48, 42, 36, 0.24),
+    0 0 0 10px rgba(255, 250, 243, 0.58),
+    0 0 0 11px rgba(184, 148, 77, 0.18);
 }
 
 .main-photo img {
@@ -462,8 +466,57 @@ body.intro-active .page-shell {
 }
 
 .main-photo img {
-  border-radius: 24px;
-  object-position: center bottom;
+  border-radius: 30px;
+  object-position: center center;
+}
+
+.hero-showcase {
+  position: relative;
+}
+
+.hero-corner {
+  position: absolute;
+  z-index: 3;
+  width: 74px;
+  height: 74px;
+  pointer-events: none;
+}
+
+.hero-corner::before,
+.hero-corner::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(135deg, var(--soft-gold), var(--gold));
+}
+
+.hero-corner::before {
+  width: 100%;
+  height: 2px;
+}
+
+.hero-corner::after {
+  width: 2px;
+  height: 100%;
+}
+
+.hero-corner-top {
+  top: 16px;
+  left: 16px;
+}
+
+.hero-corner-bottom {
+  right: 16px;
+  bottom: 16px;
+  transform: rotate(180deg);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 
 .main-photo::before {
@@ -1069,14 +1122,12 @@ fieldset {
   }
 
   .hero {
-    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.72fr);
+    grid-template-columns: 1fr;
     align-items: center;
-    justify-items: stretch;
+    justify-items: center;
     min-height: calc(100vh - 60px);
-    column-gap: clamp(28px, 4vw, 52px);
-    row-gap: 34px;
-    padding: 54px 54px 44px;
-    text-align: left;
+    padding: 44px;
+    text-align: center;
   }
 
   .hero-content {
@@ -1106,9 +1157,9 @@ fieldset {
   }
 
   .main-photo {
-    width: min(100%, 520px);
+    width: min(78vw, 640px);
     min-height: auto;
-    aspect-ratio: 820 / 1024;
+    aspect-ratio: 1122 / 1402;
     justify-self: center;
     align-self: center;
   }
@@ -1178,7 +1229,7 @@ fieldset {
 
 @media (min-width: 1080px) {
   .main-photo {
-    width: min(100%, 550px);
+    width: min(62vw, 690px);
   }
 }
 
