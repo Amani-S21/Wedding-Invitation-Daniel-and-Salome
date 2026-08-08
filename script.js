@@ -41,17 +41,7 @@ let galleryIndex = 0;
 let galleryTimer;
 
 textSections.forEach((section, index) => {
-  const opener = document.createElement("div");
-  opener.className = "section-opener";
-  opener.setAttribute("aria-hidden", "true");
-  opener.innerHTML = `
-    <span class="opener-heart">
-      <i class="bi bi-heart-fill"></i>
-    </span>
-  `;
-
   section.classList.add(index % 2 === 0 ? "from-left" : "from-right");
-  section.prepend(opener);
 });
 
 function openInvitation() {
