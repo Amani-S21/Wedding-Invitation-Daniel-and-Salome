@@ -208,7 +208,7 @@ Attendance: ${attendance}
 
 Thank you.`;
 
-  const whatsappUrl = `https://wa.me/243970241789?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/15155081563?text=${encodeURIComponent(
     message
   )}`;
 
