@@ -87,8 +87,8 @@ body::before {
 
 .intro-card {
   position: relative;
-  width: min(84vw, 360px);
-  aspect-ratio: 1.32;
+  width: min(90vw, 430px);
+  min-height: 330px;
   overflow: hidden;
   color: var(--ink);
   border: 1px solid rgba(228, 201, 132, 0.5);
@@ -114,8 +114,8 @@ body::before {
 .intro-flap {
   position: absolute;
   inset: 0;
-  z-index: 2;
-  clip-path: polygon(0 0, 100% 0, 50% 58%);
+  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 50% 44%);
   background:
     linear-gradient(160deg, rgba(255, 250, 243, 0.98), rgba(228, 201, 132, 0.42)),
     var(--ivory);
@@ -126,7 +126,7 @@ body::before {
 
 .intro-seal {
   position: absolute;
-  top: 46%;
+  top: 41%;
   left: 50%;
   z-index: 3;
   display: grid;
@@ -143,29 +143,31 @@ body::before {
 
 .intro-content {
   position: absolute;
-  inset: 34% 20px 20px;
-  z-index: 1;
+  inset: 38px 26px 28px;
+  z-index: 4;
   display: grid;
   place-content: center;
-  gap: 9px;
+  gap: 13px;
   text-align: center;
+  pointer-events: none;
 }
 
 .intro-content span,
 .intro-content small {
   color: var(--gold);
-  font-size: 0.72rem;
+  font-size: clamp(0.86rem, 3.1vw, 1rem);
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .intro-content strong {
   color: var(--ink);
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2.1rem, 11vw, 3.4rem);
+  font-size: clamp(3rem, 13vw, 4.7rem);
   font-weight: 700;
-  line-height: 0.92;
+  line-height: 0.86;
+  text-shadow: 0 10px 26px rgba(48, 42, 36, 0.12);
 }
 
 .invitation-intro.is-opening .intro-flap {
@@ -225,7 +227,6 @@ body.intro-active .page-shell {
   background: radial-gradient(circle, rgba(228, 201, 132, 0.28), transparent 64%);
   filter: blur(10px);
   transform: translateX(-50%);
-  animation: glowPulse 5s ease-in-out infinite;
 }
 
 .hero::after {
@@ -250,13 +251,11 @@ body.intro-active .page-shell {
 .hero-decoration-left {
   left: 24px;
   top: 28px;
-  animation: floatSoft 7s ease-in-out infinite;
 }
 
 .hero-decoration-right {
   right: 24px;
   bottom: 28px;
-  animation: floatSoft 8s ease-in-out infinite reverse;
 }
 
 .hero-content,
@@ -279,7 +278,6 @@ body.intro-active .page-shell {
   place-content: center;
   padding: 42px 34px;
   text-align: center;
-  animation: invitationFloat 6.5s ease-in-out infinite;
 }
 
 .hero-copy::before {
@@ -292,7 +290,6 @@ body.intro-active .page-shell {
     inset 0 0 0 12px rgba(255, 255, 255, 0.22),
     0 18px 42px rgba(184, 148, 77, 0.08);
   pointer-events: none;
-  animation: circleGlow 4.8s ease-in-out infinite;
 }
 
 .eyebrow,
@@ -325,18 +322,6 @@ body.intro-active .page-shell {
   line-height: 0.88;
   color: var(--ink);
   text-shadow: 0 10px 24px rgba(48, 42, 36, 0.08);
-}
-
-.couple-names span {
-  animation: nameReveal 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-}
-
-.couple-names span:nth-child(2) {
-  animation-delay: 160ms;
-}
-
-.couple-names span:nth-child(3) {
-  animation-delay: 280ms;
 }
 
 .couple-names span:not(.ampersand) {
@@ -394,7 +379,6 @@ body.intro-active .page-shell {
   border: 1px solid rgba(184, 148, 77, 0.24);
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.42);
-  animation: cueBounce 1.6s ease-in-out infinite;
 }
 
 .main-photo {
@@ -409,7 +393,6 @@ body.intro-active .page-shell {
   box-shadow:
     0 26px 54px rgba(48, 42, 36, 0.18),
     0 0 0 8px rgba(255, 250, 243, 0.42);
-  animation: photoEntrance 900ms ease both, invitationFloat 7s ease-in-out 900ms infinite;
 }
 
 .main-photo img {
@@ -432,7 +415,6 @@ body.intro-active .page-shell {
   background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.24) 46%, transparent 70%);
   opacity: 0;
   transform: translateX(-120%);
-  animation: photoShine 5.5s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -449,11 +431,7 @@ body.intro-active .page-shell {
 }
 
 .photo-sparkles i {
-  animation: sparklePop 2.4s ease-in-out infinite;
-}
-
-.photo-sparkles i:nth-child(2) {
-  animation-delay: 700ms;
+  opacity: 0.86;
 }
 
 .section {
@@ -831,119 +809,6 @@ address {
   display: block;
   object-fit: cover;
   object-position: center top;
-}
-
-@keyframes floatSoft {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-10px) rotate(4deg);
-  }
-}
-
-@keyframes glowPulse {
-  0%,
-  100% {
-    opacity: 0.45;
-    transform: translateX(-50%) scale(0.96);
-  }
-
-  50% {
-    opacity: 0.85;
-    transform: translateX(-50%) scale(1.06);
-  }
-}
-
-@keyframes invitationFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-@keyframes nameReveal {
-  from {
-    opacity: 0;
-    transform: translateY(18px) scale(0.98);
-    filter: blur(4px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
-}
-
-@keyframes cueBounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(7px);
-  }
-}
-
-@keyframes photoEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(28px) scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes photoShine {
-  0%,
-  62% {
-    opacity: 0;
-    transform: translateX(-120%);
-  }
-
-  72% {
-    opacity: 0.75;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateX(120%);
-  }
-}
-
-@keyframes sparklePop {
-  0%,
-  100% {
-    opacity: 0.42;
-    transform: scale(0.88) rotate(0deg);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(1.12) rotate(8deg);
-  }
-}
-
-@keyframes circleGlow {
-  0%,
-  100% {
-    border-color: rgba(184, 148, 77, 0.3);
-  }
-
-  50% {
-    border-color: rgba(184, 148, 77, 0.58);
-  }
 }
 
 .rsvp-form {
