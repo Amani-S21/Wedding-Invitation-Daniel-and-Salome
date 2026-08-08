@@ -413,30 +413,125 @@ body.intro-active .page-shell {
 
 .text-section {
   background:
-    linear-gradient(rgba(255, 250, 243, 0.94), rgba(255, 250, 243, 0.94)),
+    linear-gradient(rgba(255, 250, 243, 0.9), rgba(255, 250, 243, 0.94)),
     radial-gradient(circle at top left, rgba(228, 201, 132, 0.24), transparent 18rem),
     radial-gradient(circle at bottom right, rgba(122, 138, 105, 0.14), transparent 18rem);
+  padding-top: 74px;
 }
 
-.text-section::before {
-  content: "";
+.section-drapery {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: 86px;
+  pointer-events: none;
+}
+
+.drapery-top {
   position: absolute;
   top: 0;
   left: 50%;
-  z-index: 1;
-  width: min(82%, 620px);
-  height: 54px;
-  border-radius: 0 0 999px 999px;
+  width: min(92%, 720px);
+  height: 76px;
+  border-radius: 0 0 42px 42px;
   background:
-    radial-gradient(circle at 14% 0, rgba(184, 148, 77, 0.5) 0 11px, transparent 12px),
-    radial-gradient(circle at 32% 0, rgba(184, 148, 77, 0.38) 0 14px, transparent 15px),
-    radial-gradient(circle at 50% 0, rgba(184, 148, 77, 0.5) 0 18px, transparent 19px),
-    radial-gradient(circle at 68% 0, rgba(184, 148, 77, 0.38) 0 14px, transparent 15px),
-    radial-gradient(circle at 86% 0, rgba(184, 148, 77, 0.5) 0 11px, transparent 12px),
-    linear-gradient(90deg, transparent, rgba(184, 148, 77, 0.4), transparent);
-  opacity: 0.72;
+    radial-gradient(ellipse at 12% 0, rgba(184, 148, 77, 0.92) 0 24px, transparent 25px),
+    radial-gradient(ellipse at 28% 0, rgba(228, 201, 132, 0.92) 0 34px, transparent 35px),
+    radial-gradient(ellipse at 50% 0, rgba(184, 148, 77, 0.98) 0 43px, transparent 44px),
+    radial-gradient(ellipse at 72% 0, rgba(228, 201, 132, 0.92) 0 34px, transparent 35px),
+    radial-gradient(ellipse at 88% 0, rgba(184, 148, 77, 0.92) 0 24px, transparent 25px),
+    linear-gradient(180deg, #d9b766, #ad8238 56%, rgba(173, 130, 56, 0));
+  box-shadow: 0 18px 34px rgba(184, 148, 77, 0.18);
   transform: translateX(-50%);
-  pointer-events: none;
+}
+
+.drapery-top::before {
+  content: "";
+  position: absolute;
+  right: 8%;
+  bottom: 18px;
+  left: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 250, 243, 0.82), transparent);
+}
+
+.drapery-column {
+  position: absolute;
+  top: 42px;
+  width: 28px;
+  height: 132px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, rgba(255, 250, 243, 0.34), transparent 26% 74%, rgba(80, 60, 31, 0.18)),
+    linear-gradient(180deg, #e4c984, #b8944d 52%, #8d6d32);
+  box-shadow:
+    0 12px 28px rgba(80, 60, 31, 0.16),
+    inset 0 0 0 1px rgba(255, 250, 243, 0.34);
+  opacity: 0.86;
+}
+
+.drapery-column::before,
+.drapery-column::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 42px;
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #e4c984, #9e7937);
+  transform: translateX(-50%);
+}
+
+.drapery-column::before {
+  top: -8px;
+}
+
+.drapery-column::after {
+  bottom: -8px;
+}
+
+.drapery-column-left {
+  left: 22px;
+}
+
+.drapery-column-right {
+  right: 22px;
+}
+
+.drapery-drop {
+  position: absolute;
+  top: 42px;
+  width: 1px;
+  height: 64px;
+  background: linear-gradient(#b8944d, rgba(184, 148, 77, 0.08));
+}
+
+.drapery-drop::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 12px rgba(184, 148, 77, 0.45);
+  transform: translateX(-50%);
+}
+
+.drapery-drop-one {
+  left: 38%;
+}
+
+.drapery-drop-two {
+  left: 50%;
+  height: 82px;
+}
+
+.drapery-drop-three {
+  left: 62%;
 }
 
 .text-section::after {
@@ -451,7 +546,7 @@ body.intro-active .page-shell {
   pointer-events: none;
 }
 
-.text-section > * {
+.text-section > *:not(.section-drapery) {
   position: relative;
   z-index: 2;
   opacity: 0;
@@ -460,15 +555,15 @@ body.intro-active .page-shell {
     transform 760ms cubic-bezier(0.2, 0.8, 0.2, 1) 120ms;
 }
 
-.text-section.from-left > * {
+.text-section.from-left > *:not(.section-drapery) {
   transform: translateX(-34px);
 }
 
-.text-section.from-right > * {
+.text-section.from-right > *:not(.section-drapery) {
   transform: translateX(34px);
 }
 
-.text-section.is-visible > * {
+.text-section.is-visible > *:not(.section-drapery) {
   opacity: 1;
   transform: translateX(0);
 }

@@ -41,7 +41,20 @@ let galleryIndex = 0;
 let galleryTimer;
 
 textSections.forEach((section, index) => {
+  const drapery = document.createElement("div");
+  drapery.className = "section-drapery";
+  drapery.setAttribute("aria-hidden", "true");
+  drapery.innerHTML = `
+    <span class="drapery-top"></span>
+    <span class="drapery-column drapery-column-left"></span>
+    <span class="drapery-column drapery-column-right"></span>
+    <span class="drapery-drop drapery-drop-one"></span>
+    <span class="drapery-drop drapery-drop-two"></span>
+    <span class="drapery-drop drapery-drop-three"></span>
+  `;
+
   section.classList.add(index % 2 === 0 ? "from-left" : "from-right");
+  section.prepend(drapery);
 });
 
 function openInvitation() {
