@@ -217,10 +217,24 @@
             </label>
           </fieldset>
 
-          <button class="primary-button form-button" type="submit">
-            <i class="bi bi-whatsapp" aria-hidden="true"></i>
-            Confirm Attendance
-          </button>
+          <div class="rsvp-actions" aria-label="RSVP sending options">
+            <button
+              class="primary-button form-button"
+              type="submit"
+              data-rsvp-method="whatsapp"
+            >
+              <i class="bi bi-whatsapp" aria-hidden="true"></i>
+              Confirm by WhatsApp
+            </button>
+            <button
+              class="secondary-button form-button"
+              type="submit"
+              data-rsvp-method="email"
+            >
+              <i class="bi bi-envelope" aria-hidden="true"></i>
+              Confirm by Email
+            </button>
+          </div>
         </form>
       </section>
 

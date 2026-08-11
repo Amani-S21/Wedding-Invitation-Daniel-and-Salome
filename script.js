@@ -193,6 +193,7 @@ startGalleryRotation();
 document.getElementById("rsvpForm").addEventListener("submit", (event) => {
   event.preventDefault();
 
+  const method = event.submitter?.dataset.rsvpMethod || "whatsapp";
   const formData = new FormData(event.currentTarget);
   const fullName = formData.get("fullName").toString().trim();
   const guestCount = formData.get("guestCount").toString().trim();
@@ -207,6 +208,16 @@ Number of guests: ${guestCount}
 Attendance: ${attendance}
 
 Thank you.`;
+
+  if (method === "email") {
+    const subject = "Wedding RSVP - Daniel and Salome";
+    const emailUrl = `mailto:amanitungasamuel@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(message)}`;
+
+    window.location.href = emailUrl;
+    return;
+  }
 
   const whatsappUrl = `https://wa.me/15155081563?text=${encodeURIComponent(
     message
