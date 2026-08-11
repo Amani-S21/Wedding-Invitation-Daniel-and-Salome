@@ -1163,6 +1163,26 @@ fieldset {
   margin-top: 0;
 }
 
+.rsvp-feedback {
+  margin: 2px 0 0;
+  padding: 14px 16px;
+  color: var(--deep-sage);
+  border: 1px solid rgba(122, 138, 105, 0.18);
+  border-radius: 18px;
+  background: rgba(255, 252, 246, 0.76);
+  box-shadow: 0 12px 24px rgba(92, 79, 57, 0.08);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.rsvp-feedback.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(22px);
@@ -1287,7 +1307,8 @@ fieldset {
   }
 
   .rsvp-form fieldset,
-  .rsvp-actions {
+  .rsvp-actions,
+  .rsvp-feedback {
     grid-column: 1 / -1;
   }
 

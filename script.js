@@ -190,6 +190,14 @@ nextButton.addEventListener("click", () => {
 showGalleryImage(0);
 startGalleryRotation();
 
+const rsvpFeedback = document.getElementById("rsvpFeedback");
+
+function showRsvpFeedback(message) {
+  rsvpFeedback.textContent = message;
+  rsvpFeedback.hidden = false;
+  rsvpFeedback.classList.add("is-visible");
+}
+
 document.getElementById("rsvpForm").addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -215,6 +223,9 @@ Thank you.`;
       subject
     )}&body=${encodeURIComponent(message)}`;
 
+    showRsvpFeedback(
+      "Your email RSVP is ready. Please tap Send in your email app to complete your confirmation."
+    );
     window.location.href = emailUrl;
     return;
   }
