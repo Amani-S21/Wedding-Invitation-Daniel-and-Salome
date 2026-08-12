@@ -402,10 +402,14 @@ body.intro-active .page-shell {
 .location-card span {
   margin: 0;
   color: var(--gold);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.section-kicker {
+  white-space: nowrap;
 }
 
 .hero-copy .eyebrow {
@@ -834,6 +838,15 @@ h2 {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(1.95rem, 6vw, 2.35rem);
   font-weight: 600;
+}
+
+.detail-card small {
+  margin-top: -4px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 address {
@@ -1433,6 +1446,12 @@ fieldset {
   .section {
     margin-top: 18px;
     padding: 34px 20px;
+  }
+
+  .section-kicker {
+    max-width: 100%;
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
   }
 
   .text-section.from-left > *,
