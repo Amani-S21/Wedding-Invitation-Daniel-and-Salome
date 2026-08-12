@@ -4,24 +4,20 @@ const galleryImages = [
     alt: "Daniel and Salome gallery photo 1"
   },
   {
-    src: "assets/images/gallery/optimized/dsc_6909_1.jpg",
+    src: "assets/images/gallery/optimized/dsc_6914.jpg",
     alt: "Daniel and Salome gallery photo 2"
   },
   {
-    src: "assets/images/gallery/optimized/dsc_6914.jpg",
+    src: "assets/images/gallery/optimized/dsc_6941.jpg",
     alt: "Daniel and Salome gallery photo 3"
   },
   {
-    src: "assets/images/gallery/optimized/dsc_6941.jpg",
+    src: "assets/images/gallery/optimized/dsc_6953.jpg",
     alt: "Daniel and Salome gallery photo 4"
   },
   {
-    src: "assets/images/gallery/optimized/dsc_6953.jpg",
-    alt: "Daniel and Salome gallery photo 5"
-  },
-  {
     src: "assets/images/gallery/optimized/dsc_6958.jpg",
-    alt: "Daniel and Salome gallery photo 6"
+    alt: "Daniel and Salome gallery photo 5"
   }
 ];
 
