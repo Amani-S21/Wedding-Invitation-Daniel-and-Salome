@@ -49,10 +49,16 @@
           <span class="hero-corner hero-corner-top" aria-hidden="true"></span>
           <span class="hero-corner hero-corner-bottom" aria-hidden="true"></span>
           <img
-            src="assets/images/main/IMAGE%20HERO%20TRAITER.PNG"
+            src="assets/images/main/hero-welcome-corrected.png"
             alt="Daniel and Salome wedding invitation hero"
+            loading="eager"
+            fetchpriority="high"
           />
         </figure>
+        <a class="scroll-cue reveal" href="#details-title" aria-label="Keep scrolling to wedding details">
+          <span>Keep scrolling</span>
+          <i class="bi bi-chevron-double-down" aria-hidden="true"></i>
+        </a>
       </section>
 
       <section class="section text-section intro-section reveal" aria-labelledby="details-title">
@@ -63,6 +69,22 @@
           celebrate their love, their union, and the beginning of a beautiful
           new chapter surrounded by the people who mean the most.
         </p>
+        <div class="guest-notes" aria-label="Guest notes">
+          <article class="guest-note">
+            <i class="bi bi-gem" aria-hidden="true"></i>
+            <div>
+              <span>Dress Attire</span>
+              <strong>Dress to Impress</strong>
+            </div>
+          </article>
+          <article class="guest-note">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            <div>
+              <span>Gifts</span>
+              <strong>We would appreciate if all gifts were placed in an envelope.</strong>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section class="section gallery-section reveal" aria-labelledby="gallery-title">
@@ -102,6 +124,16 @@
             <i class="bi bi-calendar2-heart" aria-hidden="true"></i>
             <span>Wedding Date</span>
             <strong>October 25, 2026</strong>
+          </article>
+          <article class="detail-card">
+            <i class="bi bi-bank" aria-hidden="true"></i>
+            <span>Ceremony Time</span>
+            <strong>11:00 AM - 1:00 PM</strong>
+          </article>
+          <article class="detail-card">
+            <i class="bi bi-cup-hot" aria-hidden="true"></i>
+            <span>Reception Time</span>
+            <strong>4:00 PM - 11:00 PM</strong>
           </article>
           <article class="detail-card">
             <i class="bi bi-stars" aria-hidden="true"></i>
@@ -199,23 +231,38 @@
         <div class="timeline">
           <div class="timeline-item">
             <i class="bi bi-door-open" aria-hidden="true"></i>
-            <span>Guest Arrival</span>
+            <div>
+              <span>Guest Arrival</span>
+              <time>10:30 AM</time>
+            </div>
           </div>
           <div class="timeline-item">
             <i class="bi bi-heart" aria-hidden="true"></i>
-            <span>Ceremony</span>
+            <div>
+              <span>Ceremony</span>
+              <time>11:00 AM - 1:00 PM</time>
+            </div>
           </div>
           <div class="timeline-item">
             <i class="bi bi-cup-straw" aria-hidden="true"></i>
-            <span>Cocktail Hour</span>
+            <div>
+              <span>Cocktail Hour</span>
+              <time>Reception to follow</time>
+            </div>
           </div>
           <div class="timeline-item">
             <i class="bi bi-cup-hot" aria-hidden="true"></i>
-            <span>Dinner Reception</span>
+            <div>
+              <span>Dinner Reception</span>
+              <time>4:00 PM - 11:00 PM</time>
+            </div>
           </div>
           <div class="timeline-item">
             <i class="bi bi-music-note-beamed" aria-hidden="true"></i>
-            <span>Dancing &amp; Celebration</span>
+            <div>
+              <span>Dancing &amp; Celebration</span>
+              <time>Evening celebration</time>
+            </div>
           </div>
         </div>
       </section>
