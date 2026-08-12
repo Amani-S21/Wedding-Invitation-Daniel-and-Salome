@@ -42,6 +42,11 @@ textSections.forEach((section, index) => {
   section.classList.add(index % 2 === 0 ? "from-left" : "from-right");
 });
 
+function resetHorizontalScroll() {
+  document.documentElement.scrollLeft = 0;
+  document.body.scrollLeft = 0;
+}
+
 function openInvitation() {
   if (invitationOpened) {
     return;
@@ -53,10 +58,13 @@ function openInvitation() {
   typeWelcomeMessage("WELCOME TO OUR WEDDING", () => {
     document.body.classList.remove("intro-active");
     invitationIntro.remove();
+    resetHorizontalScroll();
   });
 }
 
 openInvitationButton.addEventListener("click", openInvitation);
+window.addEventListener("load", resetHorizontalScroll);
+window.addEventListener("resize", resetHorizontalScroll);
 
 function typeWelcomeMessage(message, onComplete) {
   let index = 0;
