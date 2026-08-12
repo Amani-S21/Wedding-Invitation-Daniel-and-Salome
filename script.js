@@ -223,7 +223,7 @@ Thank you.`;
 
   if (method === "email") {
     const subject = "Wedding RSVP - Daniel and Salome";
-    const emailUrl = `mailto:amanitungasamuel@gmail.com?subject=${encodeURIComponent(
+    const emailUrl = `mailto:danieltheodore255@gmail.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(message)}`;
 
