@@ -840,6 +840,15 @@ h2 {
   font-weight: 600;
 }
 
+.detail-card .time-text {
+  color: var(--muted);
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.15rem, 4.5vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+}
+
 .detail-card small {
   margin-top: -4px;
   color: var(--muted);
